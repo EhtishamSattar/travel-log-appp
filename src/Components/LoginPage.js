@@ -1,10 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Navabar from './Navbar'
 
 const LoginPage = () => {
     return (
         <>
-            <div className="bg-[#F9FAFB] h-screen flex items-center ">
+            <Navabar/>
+            <div className="bg-[#F9FAFB] h-screen flex items-center pt-6">
                 <div className="h-max w-3/5 mx-auto flex flex-col items-center">
                     <h1 className="font-bold text-center pb-10 text-3xl">Begin your adventures with us ! </h1>
                     <div className="bg-white shadow-xl p-10 flex flex-col gap-4 text-sm ">

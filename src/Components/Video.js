@@ -1,10 +1,12 @@
 import React from 'react'
 import travelooVideo from '../icons/travelooVideo.mp4'
+import Navabr from './Navbar'
 
 const Video = () => {
     return (
         <>
-            <div className='Video w-screen h-screen'>
+            <Navabr/>
+            <div className='Video w-screen h-screen bg-black'>
                 
                 <div className='w-3/4 h-3/4 m-auto pt-10'>
 

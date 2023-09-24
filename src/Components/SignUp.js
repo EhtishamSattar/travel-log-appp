@@ -1,10 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Navbar from './Navbar'
 
 const SignUp = () => {
   return (
     <>
-    <div className="bg-[#F9FAFB] h-screen w-screen flex items-center ">
+    <Navbar/>
+    <div className="bg-[#F9FAFB] h-screen w-screen flex items-center pt-6">
         <div className="h-max w-3/5 mx-auto flex flex-col items-center">
             <h1 className="font-bold text-center pb-10 text-3xl">Begin your adventures with us ! </h1>
             <div className="bg-white shadow-xl p-10 flex flex-col gap-4 text-sm ">
@@ -23,7 +25,7 @@ const SignUp = () => {
                 
                 
             </div>
-            <p className="text-sm text-gray-500 mt-10">Already a member? <Link to="/" className="text-[#4F46E5] font-bold">Login</Link></p>
+            <p className="text-sm text-gray-500 mt-10">Already a member? <Link to="/login" className="text-[#4F46E5] font-bold">Login</Link></p>
         </div>
     </div>
     </>

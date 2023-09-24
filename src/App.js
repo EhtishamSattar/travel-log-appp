@@ -8,23 +8,17 @@ import React, { useState, useEffect } from 'react';
 import LoadingPage from './Components/LoadingPage';
 import Video from './Components/Video';
 import ContactUs from './Components/ContactUs';
+import Navbar from './Components/Navbar';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    // Listen for the 'load' event to detect when the website has finished loading
-    window.addEventListener('load', () => {
-      setIsLoading(false);
-    });
+  setTimeout(() => {
 
-    // Clean up the event listener when the component unmounts
-    return () => {
-      window.removeEventListener('load', () => {
-        setIsLoading(false);
-      });
-    };
-  }, []);
+    setIsLoading(false);
+  },2500)
+
+  
 
   return (
     <div className="App">
@@ -32,6 +26,7 @@ function App() {
       {isLoading ?
         <LoadingPage /> : null}
 
+      
       {!isLoading && <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<LoginPage />} />

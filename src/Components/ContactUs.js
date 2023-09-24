@@ -1,10 +1,12 @@
 import React from 'react'
 import contactvideo from '../icons/contactvideo.mp4'
+import Navbar from './Navbar'
 
 const ContactUs = () => {
     return (
         <>
-            <div className='text-3xl p-10 text-center font-extrabold' style={{"fontFamily":"Inter Med"}}> Contact Us - Traveloo </div>
+            <Navbar/>
+            <div className='text-3xl p-10 pt-28 text-center font-extrabold' style={{"fontFamily":"Inter Med"}}> Contact Us - Traveloo </div>
             <div className='w-screen flex flex-row-reverse' style={{"height":"70vh"}}>
                 <div className='h-2/4 w-2/4 p-10'>
                     <div className='text-3xl' style={{"fontFamily":"Inter Med"}}>For Our Services </div>
@@ -14,7 +16,7 @@ const ContactUs = () => {
                     </div>
                     <div className='pt-4' style={{"fontFamily":"Inter Med"}}>
 
-                    <button className="p-2 text-center text-black px-4 hover:bg-blue-700 hover:text-white border-2 border-blue-700">Submit</button>
+                    <button className="p-2 text-center text-black px-4 hover:bg-blue-700 hover:text-white border-2 border-gray-700">Submit</button>
 
                     </div>
                 </div>
