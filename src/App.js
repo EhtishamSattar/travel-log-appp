@@ -7,6 +7,7 @@ import LandingPage from './Components/LandingPage';
 import React, { useState, useEffect } from 'react';
 import LoadingPage from './Components/LoadingPage';
 import Video from './Components/Video';
+import ContactUs from './Components/ContactUs';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -36,6 +37,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signUp" element={<SignUp />} />
         <Route path="/travelooVideo" element={<Video />} />
+        <Route path="/contactUs" element={<ContactUs/>} />
       </Routes>
       }
 
