@@ -3,8 +3,15 @@ import React from 'react'
 const Sidebar = () => {
   return (
     <>
-    <div className='h-screen bg-slate-500'>
-        Sidebar
+    <div className='flex flex-col bg-red-600'>
+        <div className='text-2xl p-4 text-white'>
+            Sidebar
+        </div>
+        <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam necessitatibus incidunt ut officiis explicabo inventore.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam necessitatibus incidunt ut officiis explicabo inventore.
+
+        </div>
 
     </div>
     </>
