@@ -20,7 +20,7 @@ const LoginPage = () => {
                         </div>
 
                         <div>
-                            <input className="bg-[#4F46E5] w-full py-2 rounded-md text-white font-bold cursor-pointer hover:bg-[#181196]" type="submit" value="Login" />
+                            <Link to="/content"><input className="bg-[#4F46E5] w-full py-2 rounded-md text-white font-bold cursor-pointer hover:bg-[#181196]" type="submit" value="Login" /></Link>
                         </div>
 
 

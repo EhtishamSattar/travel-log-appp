@@ -9,6 +9,7 @@ import LoadingPage from './Components/LoadingPage';
 import Video from './Components/Video';
 import ContactUs from './Components/ContactUs';
 import Navbar from './Components/Navbar';
+import Plot from './Components/Plot';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -33,6 +34,7 @@ function App() {
         <Route path="/signUp" element={<SignUp />} />
         <Route path="/travelooVideo" element={<Video />} />
         <Route path="/contactUs" element={<ContactUs/>} />
+        <Route path="/content" element={<Plot/>} />
       </Routes>
       }
 
