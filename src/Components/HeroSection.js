@@ -5,9 +5,9 @@ const HeroSection = () => {
         <>
 
             <h1 className="m-10 mt-32 mb-1 text-center text-2xl font-extrabold tracking-tight leading-none text-black md:text-2xl lg:text-5xl dark:text-black" style={{ "fontFamily": "Inter Semibold" }}>We invest in our People’s dreams</h1>
-            <section className="bg-white dark:bg-black " style={{ "fontFamily": "Inter Extra" }}>
+            <section className="bg-white dark:bg-white " style={{ "fontFamily": "Inter Extra" }}>
                 <div className="py-8 px-4 mx-auto max-w-screen text-center lg:py-16 lg:px-12" style={{"backgroundColor": "rgb(248, 248, 248)"}}>
-                    <a href="/login" className="inline-flex justify-between items-center py-1 px-1 pr-4 mb-7 text-sm text-white rounded-full dark:bg-black dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700" role="alert">
+                    <a href="/signUp" className="inline-flex justify-between items-center py-1 px-1 pr-4 mb-7 text-sm text-white rounded-full dark:bg-black dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700" role="alert">
                         <span className="text-sm font-medium px-4">Be ready to be a part ? </span>
                         <svg className="ml-2 w-5 h-5 hover:text-red-700" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd"></path></svg>
                     </a>
