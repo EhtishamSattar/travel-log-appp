@@ -1,7 +1,7 @@
 import React from 'react'
 import NavbarMain from './NavbarMain'
 import Post from './Post'
-import { Sidebar } from 'flowbite-react'
+import Sidebar from './Sidebar'
 
 const Plot = () => {
     return (
@@ -17,12 +17,12 @@ const Plot = () => {
                             <div className='my-6 px-6 pt-4 z-10 font-semibold'>
 
                                 <div
-                                    className="flex bg-white rounded-full w-5/6 h-11 m-auto border-2  focus-within:ring-2 ring-teal-500"
+                                    className="flex bg-white rounded-full w-5/6 h-11 m-auto border-2  focus-within:ring-1 ring-black"
                                 >
                                     <input
                                         type="text"
-                                        className="w-full rounded-full px-3 py-3 text-sm text-gray-600 focus:outline-none"
-                                        placeholder="Search Here "
+                                        className="w-full rounded-full px-3 py-3 text-sm text-gray-700 focus:outline-none font-semibold"
+                                        placeholder="Search blogs here  "
                                     />
                                     <button
                                         className="rounded-full px-3 py-3 hidden md:block bg-gray-400"
@@ -59,7 +59,7 @@ const Plot = () => {
                     <Post />
                 </div>
 
-                <div className='w-1/4 bg-black '>
+                <div className='w-1/4 overflow-y-hidden h-screen fixed right-0 border border-r-2'>
                     <Sidebar />
                 </div>
 
