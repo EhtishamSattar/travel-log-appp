@@ -15,7 +15,7 @@ const Video = () => {
                     controls // Add this attribute to show video controls (play, pause, volume, etc.)
                     width="100%" // Set the width of the video player
                     height="100%" // Set the height of the video player
-                    autoplay // Add this attribute to autoplay the video when the page loads
+                    autoPlay // Add this attribute to autoplay the video when the page loads
                 >
                     Your browser does not support the video tag.
                 </video>
