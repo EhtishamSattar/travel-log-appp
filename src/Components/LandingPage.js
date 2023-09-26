@@ -51,7 +51,7 @@ const LandingPage = () => {
 
                 </div>
 
-                <div className='heroSection -z-10 '>
+                <div className='heroSection -z-10 bg-white'>
                     <HeroSection />
 
                 </div>

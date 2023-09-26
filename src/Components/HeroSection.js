@@ -4,7 +4,7 @@ const HeroSection = () => {
     return (
         <>
 
-            <h1 className="m-10 mt-32 mb-1 text-center text-2xl font-extrabold tracking-tight leading-none text-black md:text-2xl lg:text-5xl dark:text-black bg-white" style={{ "fontFamily": "Inter Semibold" }}>We invest in our People’s dreams</h1>
+            <h1 className="m-10 mt-32 mb-1 text-center text-2xl font-extrabold tracking-tight leading-none text-black md:text-2xl lg:text-5xl dark:text-black" style={{ "fontFamily": "Inter Semibold" }}>We invest in our People’s dreams</h1>
             <section className="bg-white dark:bg-white " style={{ "fontFamily": "Inter Extra" }}>
                 <div className="py-8 px-4 mx-auto max-w-screen text-center lg:py-16 lg:px-12" style={{"backgroundColor": "rgb(248, 248, 248)"}}>
                     <a href="/signUp" className="inline-flex justify-between items-center py-1 px-1 pr-4 mb-7 text-sm text-white rounded-full dark:bg-black dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700" role="alert">
