@@ -52,11 +52,11 @@ const Plot = () => {
                         </div>
                     </div>
                     <Post />
+                    {/* <Post />
                     <Post />
                     <Post />
                     <Post />
-                    <Post />
-                    <Post />
+                    <Post /> */}
                 </div>
 
                 <div className='w-1/4 overflow-y-hidden h-screen fixed right-0 border border-r-2'>
