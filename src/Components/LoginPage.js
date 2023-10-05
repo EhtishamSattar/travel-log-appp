@@ -2,8 +2,10 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Navabar from './Navbar'
 import { useState } from 'react'
+import {useNavigate} from 'react-router-dom'
 
 const LoginPage = () => {
+    const navigate=useNavigate();   
 
     const [credentials, setcredentials] = useState({name:"",email:"",password:"",cpassword:""});
 
@@ -28,10 +30,11 @@ const LoginPage = () => {
             localStorage.setItem('token',json.authToken);
             //to redirect we are using useNavigate or useHistory hook from react router dom
             navigate("/content");
-            props.showAlert("Your account has been created","success");
+            alert("You logged in successfully");
+            
           }else{
             console.log(json);
-            props.showAlert("Please enter valid credentials to get registered","danger");
+            alert(json.error);
             
           }
     }
@@ -42,19 +45,19 @@ const LoginPage = () => {
     return (
         <>
             <Navabar />
-            <div className="bg-[#F9FAFB] h-screen flex items-center pt-6">
+            <div className="bg-[#F9FAFB] h-screen flex items-center pt-12">
                 <div className="h-max w-3/5 mx-auto flex flex-col items-center">
-                    <h1 className="font-bold text-center pb-10 text-3xl">New experiences awaiting ! </h1>
+                    <h1 className="font-bold text-center pb-2 text-3xl">New experiences awaiting ! </h1>
                     <div className="bg-white shadow-xl p-10 flex flex-col gap-4 text-sm ">
                         <form onSubmit={handleSubmit}>
 
                             <div>
                                 <label className="text-gray-600 font-bold inline-block pb-2" htmlFor="email">Email</label>
-                                <input onChange={onchange} className="border border-gray-400 focus:outline-slate-400 rounded-md w-full shadow-sm px-5 py-2" type="email" name="email" placeholder="xyz@gmail.com" required/>
+                                <input onChange={onChange} className="border border-gray-400 focus:outline-slate-400 rounded-md w-full shadow-sm px-5 py-2" type="email" name="email" placeholder="xyz@gmail.com" required/>
                             </div>
                             <div>
-                                <label className="text-gray-600 font-bold inline-block pb-2" htmlFor="name">Email</label>
-                                <input onChange={onChange} className="border border-gray-400 focus:outline-slate-400 rounded-md w-full shadow-sm px-5 py-2" type="email" name="email" placeholder="Username" required/>
+                                <label className="text-gray-600 font-bold inline-block pb-2 pt-4" htmlFor="name">Name</label>
+                                <input onChange={onChange} className="border border-gray-400 focus:outline-slate-400 rounded-md w-full shadow-sm px-5 py-2" type="name" name="name" placeholder="Username" required/>
                             </div>
                             <div className='mt-4'>
                                 <label className="text-gray-600 font-bold inline-block pb-2" htmlFor="password">Password</label>

@@ -28,10 +28,9 @@ const SignUp = () => {
             localStorage.setItem('token',json.authToken);
             //to redirect we are using useNavigate or useHistory hook from react router dom
             navigate("/content");
-            props.showAlert("Your account has been created","success");
+            
           }else{
             console.log(json);
-            //props.showAlert("Please enter valid credentials to get registered","danger");
             
           }
     }

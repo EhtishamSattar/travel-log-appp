@@ -8,11 +8,11 @@ const Plot = () => {
         <>
 
             <NavbarMain />
-            <div className='flex flex-row w-screen pt-10' style={{"fontFamily": "Inter Extra"}}>
+            <div className='flex flex-row w-screen pt-10' style={{ "fontFamily": "Inter Extra" }}>
                 <div className='w-3/4'>
                     <div className='md:mx-auto my-10 max-w-md md:max-w-4xl '>
                         <div className="Search justify-center text-center" style={{ "fontFamily": "Inter Extra" }}>
-                            
+
 
                             <div className='my-6 px-6 pt-4 z-10 font-semibold'>
 
@@ -45,6 +45,21 @@ const Plot = () => {
                             </div>
 
 
+                        </div>
+
+                        <div className='text-center'>
+                            <button className='text-center'>
+                                <svg class="w-6 h-6 text-gray-800 dark:text-gray-800 hover:dark:text-blue-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.546.5a9.5 9.5 0 1 0 9.5 9.5 9.51 9.51 0 0 0-9.5-9.5ZM13.788 11h-3.242v3.242a1 1 0 1 1-2 0V11H5.304a1 1 0 0 1 0-2h3.242V5.758a1 1 0 0 1 2 0V9h3.242a1 1 0 1 1 0 2Z" />
+                                </svg>
+                            </button>
+                            <button className='text-center'>
+                            <button className='text-center'>
+                                <svg class="w-6 h-6 text-gray-800 dark:text-gray-800 hover:dark:text-blue-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.546.5a9.5 9.5 0 1 0 9.5 9.5 9.51 9.51 0 0 0-9.5-9.5ZM13.788 11h-3.242v3.242a1 1 0 1 1-2 0V11H5.304a1 1 0 0 1 0-2h3.242V5.758a1 1 0 0 1 2 0V9h3.242a1 1 0 1 1 0 2Z" />
+                                </svg>
+                            </button>
+                            </button>
                         </div>
                         <div className='text-3xl font-extrabold'>
 

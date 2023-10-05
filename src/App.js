@@ -1,14 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
 import LoginPage from './Components/LoginPage';
 import { Route, Routes } from 'react-router-dom';
 import SignUp from './Components/SignUp';
 import LandingPage from './Components/LandingPage';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import LoadingPage from './Components/LoadingPage';
 import Video from './Components/Video';
 import ContactUs from './Components/ContactUs';
-import Navbar from './Components/Navbar';
 import Plot from './Components/Plot';
 
 function App() {
@@ -18,8 +16,6 @@ function App() {
 
     setIsLoading(false);
   },1000)
-
-  
 
   return (
     <div className="App">
