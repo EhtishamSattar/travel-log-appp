@@ -1,6 +1,50 @@
 import React from 'react'
+import { useState } from 'react';
+import Modal from 'react-modal';
 
 const Post = () => {
+    let subtitle;
+    const customStyles = {
+        content: {
+            top: '50%',
+            left: '50%',
+            right: 'auto',
+            bottom: 'auto',
+            marginRight: '-50%',
+            transform: 'translate(-50%, -50%)',
+
+        },
+        overlay: {
+            backgroundColor: 'rgba(0, 0, 0, 0.5)', // Adjust the color and opacity as needed
+        },
+    };
+
+    const [modalIsOpen, setIsOpen] = useState(false);
+
+    function openModal() {
+        setIsOpen(true);
+        document.body.style.overflow = 'hidden';
+    }
+    function afterOpenModal() {
+        // references are now sync'd and can be accessed.
+        subtitle.style.color = "#000";
+    }
+
+    function closeModal() {
+        setIsOpen(false);
+        document.body.style.overflow = 'auto';
+    }
+
+
+    const [credentials, setcredentials] = useState({ name: "", email: "", password: "", cpassword: "" });
+
+
+
+    const onChange = (e) => {
+        setcredentials({ ...credentials, [e.target.name]: e.target.value });
+        //console.log(credentials.password,"  ",credentials.cpassword);
+    }
+
     return (
         <>
 
@@ -76,57 +120,55 @@ const Post = () => {
                             </button>
 
 
-                            <button className='flex mr-8'>
+                            <button className='flex mr-8' onClick={openModal}>
                                 <svg className="w-4 h-4 mr-1 text-gray-800 dark:text-gray-800 hover:text-blue-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 18">
                                     <path d="M12.687 14.408a3.01 3.01 0 0 1-1.533.821l-3.566.713a3 3 0 0 1-3.53-3.53l.713-3.566a3.01 3.01 0 0 1 .821-1.533L10.905 2H2.167A2.169 2.169 0 0 0 0 4.167v11.666A2.169 2.169 0 0 0 2.167 18h11.666A2.169 2.169 0 0 0 16 15.833V11.1l-3.313 3.308Zm5.53-9.065.546-.546a2.518 2.518 0 0 0 0-3.56 2.576 2.576 0 0 0-3.559 0l-.547.547 3.56 3.56Z" />
                                     <path d="M13.243 3.2 7.359 9.081a.5.5 0 0 0-.136.256L6.51 12.9a.5.5 0 0 0 .59.59l3.566-.713a.5.5 0 0 0 .255-.136L16.8 6.757 13.243 3.2Z" />
                                 </svg>
 
                             </button>
+                            <Modal isOpen={modalIsOpen}
 
-                            <div class="p-3">
-                                <button onclick="openModal(true)" class="bg-green-500 hover:bg-green-600 px-4 py-2 rounded text-white focus:outline-none">
-                                    Open Modal
-                                </button>
-                            </div>
-
-
-                            <div id="modal_overlay" class="hidden absolute inset-0 bg-black bg-opacity-30 h-screen w-full flex justify-center items-start md:items-center pt-10 md:pt-0">
-
-
-                                <div id="modal" class="pacity-0 transform -translate-y-full scale-150  relative w-10/12 md:w-1/2 h-1/2 md:h-3/4 bg-white rounded shadow-lg transition-opacity transition-transform duration-300">
-
-
-                                    <button
-                                        onclick="openModal(false)"
-                                        class="absolute -top-3 -right-3 bg-red-500 hover:bg-red-600 text-2xl w-10 h-10 rounded-full focus:outline-none text-white">
-                                        &cross;
+                                onRequestClose={closeModal}
+                                style={customStyles}
+                                onAfterOpen={afterOpenModal}
+                                contentLabel="Modal">
+                                <div className='flex flex-row justify-between'>
+                                    <h2 className="text-blue-500 " ref={(_subtitle) => (subtitle = _subtitle)}>Edit</h2>
+                                    <button onClick={closeModal} className=''>
+                                        <svg class="w-[17px] h-[17px] text-gray-800 dark:text-gray-800 hover:text-blue-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                        </svg>
                                     </button>
 
-
-                                    <div class="px-4 py-3 border-b border-gray-200">
-                                        <h2 class="text-xl font-semibold text-gray-600">Title</h2>
-                                    </div>
-
-
-                                    <div class="w-full p-3">
-                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores, quis tempora! Similique, explicabo quaerat maxime corrupti tenetur blanditiis voluptas molestias totam? Quaerat laboriosam suscipit repellat aliquam blanditiis eum quos nihil.
-                                    </div>
-
-
-                                    <div class="absolute bottom-0 left-0 px-4 py-3 border-t border-gray-200 w-full flex justify-end items-center gap-3">
-                                        <button class="bg-green-500 hover:bg-green-600 px-4 py-2 rounded text-white focus:outline-none">Save</button>
-                                        <button
-                                            onclick="openModal(false)"
-                                            class="bg-red-500 hover:bg-red-600 px-4 py-2 rounded text-white focus:outline-none"
-                                        >Close</button>
-                                    </div>
                                 </div>
 
-                            </div>
+                                <form>
+                                    <div className="bg-white  p-10 flex flex-col gap-4 text-sm ">
+
+                                        <div className='flex flex-row justify-between'>
+                                            <label className="text-gray-600 font-bold pt-2 mr-3" htmlFor="email">Email</label>
+                                            <input onChange={onChange} className="border border-gray-400 focus:outline-slate-400 rounded-md w-full shadow-sm px-5 py-2" type="email" name="email" placeholder="xyz@gmail.com" required />
+                                        </div>
+                                        <div>
+                                            <label className="text-gray-600 font-bold inline-block pb-2" htmlFor="username">Name</label>
+                                            <input onChange={onChange} className="border border-gray-400 focus:outline-slate-400 rounded-md w-full shadow-sm px-5 py-2" type="username" name="username" placeholder="Username" required />
+                                        </div>
+                                        <div>
+                                            <label className="text-gray-600 font-bold inline-block pb-2" htmlFor="password">Password</label>
+                                            <input onChange={onChange} className="border border-gray-400 focus:outline-slate-400 rounded-md w-full shadow-sm px-5 py-2" type="password" name="password" placeholder="******" required />
+                                        </div>
+
+                                        <div>
+                                            <input className="bg-black w-full py-2 rounded-md text-white font-bold cursor-pointer hover:bg-[#181196]" type="submit" value="SignUp" />
+                                        </div>
 
 
+                                    </div>
+                                </form>
 
+
+                            </Modal>
 
                             <button className='flex mr-8'>
                                 <svg className="w-4 h-4 mr-1 text-gray-800 dark:text-gray-800 hover:text-blue-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
@@ -134,9 +176,6 @@ const Post = () => {
                                 </svg>
 
                             </button>
-
-
-
 
                         </div>
                     </div>
