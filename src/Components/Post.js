@@ -55,16 +55,16 @@ const Post = () => {
                         </p>
                         <div className="mt-4 flex items-center">
                             <button className="flex text-gray-700 text-sm mr-8 dark:text-gray-800 hover:text-blue-400">
-                            <svg className="w-4 h-4 mr-1 text-gray-800 dark:text-gray-800 hover:text-blue-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 18">
-    <path d="M17.947 2.053a5.209 5.209 0 0 0-3.793-1.53A6.414 6.414 0 0 0 10 2.311 6.482 6.482 0 0 0 5.824.5a5.2 5.2 0 0 0-3.8 1.521c-1.915 1.916-2.315 5.392.625 8.333l7 7a.5.5 0 0 0 .708 0l7-7a6.6 6.6 0 0 0 2.123-4.508 5.179 5.179 0 0 0-1.533-3.793Z"/>
-  </svg>
+                                <svg className="w-4 h-4 mr-1 text-gray-800 dark:text-gray-800 hover:text-blue-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 18">
+                                    <path d="M17.947 2.053a5.209 5.209 0 0 0-3.793-1.53A6.414 6.414 0 0 0 10 2.311 6.482 6.482 0 0 0 5.824.5a5.2 5.2 0 0 0-3.8 1.521c-1.915 1.916-2.315 5.392.625 8.333l7 7a.5.5 0 0 0 .708 0l7-7a6.6 6.6 0 0 0 2.123-4.508 5.179 5.179 0 0 0-1.533-3.793Z" />
+                                </svg>
                                 <span>12</span>
                             </button>
 
                             <button className="flex  text-gray-700 text-sm mr-8 ">
-                            <svg class="w-4 h-4 mr-1 text-gray-800 dark:text-gray-800 hover:text-blue-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 18">
-    <path d="M18 0H2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h3.546l3.2 3.659a1 1 0 0 0 1.506 0L13.454 14H18a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm-8 10H5a1 1 0 0 1 0-2h5a1 1 0 1 1 0 2Zm5-4H5a1 1 0 0 1 0-2h10a1 1 0 1 1 0 2Z"/>
-  </svg>
+                                <svg class="w-4 h-4 mr-1 text-gray-800 dark:text-gray-800 hover:text-blue-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 18">
+                                    <path d="M18 0H2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h3.546l3.2 3.659a1 1 0 0 0 1.506 0L13.454 14H18a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm-8 10H5a1 1 0 0 1 0-2h5a1 1 0 1 1 0 2Zm5-4H5a1 1 0 0 1 0-2h10a1 1 0 1 1 0 2Z" />
+                                </svg>
                                 <span>8</span>
                             </button>
 
@@ -83,6 +83,49 @@ const Post = () => {
                                 </svg>
 
                             </button>
+
+                            <div class="p-3">
+                                <button onclick="openModal(true)" class="bg-green-500 hover:bg-green-600 px-4 py-2 rounded text-white focus:outline-none">
+                                    Open Modal
+                                </button>
+                            </div>
+
+
+                            <div id="modal_overlay" class="hidden absolute inset-0 bg-black bg-opacity-30 h-screen w-full flex justify-center items-start md:items-center pt-10 md:pt-0">
+
+
+                                <div id="modal" class="pacity-0 transform -translate-y-full scale-150  relative w-10/12 md:w-1/2 h-1/2 md:h-3/4 bg-white rounded shadow-lg transition-opacity transition-transform duration-300">
+
+
+                                    <button
+                                        onclick="openModal(false)"
+                                        class="absolute -top-3 -right-3 bg-red-500 hover:bg-red-600 text-2xl w-10 h-10 rounded-full focus:outline-none text-white">
+                                        &cross;
+                                    </button>
+
+
+                                    <div class="px-4 py-3 border-b border-gray-200">
+                                        <h2 class="text-xl font-semibold text-gray-600">Title</h2>
+                                    </div>
+
+
+                                    <div class="w-full p-3">
+                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores, quis tempora! Similique, explicabo quaerat maxime corrupti tenetur blanditiis voluptas molestias totam? Quaerat laboriosam suscipit repellat aliquam blanditiis eum quos nihil.
+                                    </div>
+
+
+                                    <div class="absolute bottom-0 left-0 px-4 py-3 border-t border-gray-200 w-full flex justify-end items-center gap-3">
+                                        <button class="bg-green-500 hover:bg-green-600 px-4 py-2 rounded text-white focus:outline-none">Save</button>
+                                        <button
+                                            onclick="openModal(false)"
+                                            class="bg-red-500 hover:bg-red-600 px-4 py-2 rounded text-white focus:outline-none"
+                                        >Close</button>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
 
 
                             <button className='flex mr-8'>

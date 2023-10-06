@@ -9,7 +9,7 @@ const SignUp = () => {
     let navigate = useNavigate();
 
     //destructuring
-    const {name,email,password}=credentials;
+    const {username,email,password}=credentials;
 
     const handleSubmit=async (e)=>{
         e.preventDefault();
@@ -18,7 +18,7 @@ const SignUp = () => {
             headers: {
               "Content-Type": "application/json",
             },
-            body: JSON.stringify({name,email,password}),
+            body: JSON.stringify({username,email,password}),
           });
           const json = await response.json();
           //console.log(credentials.password," ",credentials.cpassword);
@@ -53,8 +53,8 @@ const SignUp = () => {
                                 <input onChange={onChange} className="border border-gray-400 focus:outline-slate-400 rounded-md w-full shadow-sm px-5 py-2" type="email" name="email" placeholder="xyz@gmail.com" required/>
                             </div>
                             <div>
-                                <label className="text-gray-600 font-bold inline-block pb-2" htmlFor="name">Name</label>
-                                <input onChange={onChange} className="border border-gray-400 focus:outline-slate-400 rounded-md w-full shadow-sm px-5 py-2" type="name" name="name" placeholder="Username" required />
+                                <label className="text-gray-600 font-bold inline-block pb-2" htmlFor="username">Name</label>
+                                <input onChange={onChange} className="border border-gray-400 focus:outline-slate-400 rounded-md w-full shadow-sm px-5 py-2" type="username" name="username" placeholder="Username" required />
                             </div>
                             <div>
                                 <label className="text-gray-600 font-bold inline-block pb-2" htmlFor="password">Password</label>
