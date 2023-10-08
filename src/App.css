@@ -25,3 +25,7 @@ body{
     font-family: 'Inter Semibold';
 }
 
+
+body{
+    overflow-x: hidden;
+}

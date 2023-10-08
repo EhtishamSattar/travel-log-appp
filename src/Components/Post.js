@@ -6,12 +6,27 @@ const Post = () => {
     let subtitle;
     const customStyles = {
         content: {
-            top: '50%',
-            left: '50%',
-            right: 'auto',
-            bottom: 'auto',
-            marginRight: '-50%',
-            transform: 'translate(-50%, -50%)',
+            top: '10%',
+            left: '10%',
+            right: '10%',
+            bottom: '10%',
+            // marginRight: '-20%',
+            //transform: 'translate(-20%, -20%)',
+
+        },
+        overlay: {
+            backgroundColor: 'rgba(0, 0, 0, 0.5)', // Adjust the color and opacity as needed
+        },
+    };
+
+    const customStyles2 = {
+        content: {
+            top: '30%',
+            left: '20%',
+            right: '20%',
+            bottom: '30%',
+            // marginRight: '-20%',
+            // transform: 'translate(-20%, -20%)',
 
         },
         overlay: {
@@ -20,9 +35,14 @@ const Post = () => {
     };
 
     const [modalIsOpen, setIsOpen] = useState(false);
+    const [modalIsOpen2, setIsOpen2] = useState(false);
 
     function openModal() {
         setIsOpen(true);
+        document.body.style.overflow = 'hidden';
+    }
+    function openModal2() {
+        setIsOpen2(true);
         document.body.style.overflow = 'hidden';
     }
     function afterOpenModal() {
@@ -32,6 +52,10 @@ const Post = () => {
 
     function closeModal() {
         setIsOpen(false);
+        document.body.style.overflow = 'auto';
+    }
+    function closeModal2() {
+        setIsOpen2(false);
         document.body.style.overflow = 'auto';
     }
 
@@ -132,7 +156,7 @@ const Post = () => {
                                 onRequestClose={closeModal}
                                 style={customStyles}
                                 onAfterOpen={afterOpenModal}
-                                contentLabel="Modal">
+                                contentLabel="Update Modal">
                                 <div className='flex flex-row justify-between'>
                                     <h2 className="text-blue-500 " ref={(_subtitle) => (subtitle = _subtitle)}>Edit</h2>
                                     <button onClick={closeModal} className=''>
@@ -147,20 +171,18 @@ const Post = () => {
                                     <div className="bg-white  p-10 flex flex-col gap-4 text-sm ">
 
                                         <div className='flex flex-row justify-between'>
-                                            <label className="text-gray-600 font-bold pt-2 mr-3" htmlFor="email">Email</label>
-                                            <input onChange={onChange} className="border border-gray-400 focus:outline-slate-400 rounded-md w-full shadow-sm px-5 py-2" type="email" name="email" placeholder="xyz@gmail.com" required />
+                                            <label className="text-gray-600 font-bold pt-2 mr-3" htmlFor="email">Title</label>
+                                            <input onChange={onChange} className="border border-gray-400 focus:outline-slate-400 rounded-md w-full shadow-sm px-5 py-2" type="text" name="title" placeholder="Enter your new title here ! " required />
                                         </div>
-                                        <div>
-                                            <label className="text-gray-600 font-bold inline-block pb-2" htmlFor="username">Name</label>
-                                            <input onChange={onChange} className="border border-gray-400 focus:outline-slate-400 rounded-md w-full shadow-sm px-5 py-2" type="username" name="username" placeholder="Username" required />
-                                        </div>
-                                        <div>
-                                            <label className="text-gray-600 font-bold inline-block pb-2" htmlFor="password">Password</label>
-                                            <input onChange={onChange} className="border border-gray-400 focus:outline-slate-400 rounded-md w-full shadow-sm px-5 py-2" type="password" name="password" placeholder="******" required />
+                                        <div className='flex flex-col justify-center'>
+                                            <label className="text-gray-600 font-bold inline-block pt-2 mb-2" htmlFor="username">Content</label>
+                                            <textarea className='border border-gray-400 focus:outline-slate-400 rounded-md shadow-sm px-5 py-2' placeholder="Write your description here !" id="content" rows={50} ></textarea>
+                                            {/* <input onChange={onChange} className="border border-gray-400 focus:outline-slate-400 rounded-md w-full shadow-sm px-5 py-2" type="text" name="content" placeholder="Write your new content here..." required /> */}
                                         </div>
 
-                                        <div>
-                                            <input className="bg-black w-full py-2 rounded-md text-white font-bold cursor-pointer hover:bg-[#181196]" type="submit" value="SignUp" />
+
+                                        <div className='flex flex-row-reverse'>
+                                            <input className="bg-black w-1/12 py-2 rounded-md text-white font-bold cursor-pointer hover:bg-[#181196] " type="submit" value="Update" />
                                         </div>
 
 
@@ -170,12 +192,31 @@ const Post = () => {
 
                             </Modal>
 
-                            <button className='flex mr-8'>
+                            <button className='flex mr-8' onClick={openModal2}>
                                 <svg className="w-4 h-4 mr-1 text-gray-800 dark:text-gray-800 hover:text-blue-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
                                     <path d="M17 4h-4V2a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v2H1a1 1 0 0 0 0 2h1v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6h1a1 1 0 1 0 0-2ZM7 2h4v2H7V2Zm1 14a1 1 0 1 1-2 0V8a1 1 0 0 1 2 0v8Zm4 0a1 1 0 0 1-2 0V8a1 1 0 0 1 2 0v8Z" />
                                 </svg>
 
                             </button>
+                            <Modal isOpen={modalIsOpen2}
+                                style={customStyles2}
+
+                                onRequestClose={closeModal2}
+                                
+                                onAfterOpen={afterOpenModal}
+                                contentLabel="Update Modal">
+
+                                <div className='flex flex-row justify-between'>
+                                    <h2 className="text-blue-500 " ref={(_subtitle) => (subtitle = _subtitle)}>Delete this post ? </h2>
+                                    <button onClick={closeModal2} className=''>
+                                        <svg class="w-[17px] h-[17px] text-gray-800 dark:text-gray-800 hover:text-blue-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                        </svg>
+                                    </button>
+
+                                </div>
+
+                            </Modal>
 
                         </div>
                     </div>

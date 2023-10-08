@@ -8,7 +8,7 @@ const Plot = () => {
         <>
 
             <NavbarMain />
-            <div className='flex flex-row w-screen pt-10' style={{ "fontFamily": "Inter Extra" }}>
+            <div className='flex flex-row w-screen pt-10' style={{ "fontFamily": "Inter Extra","overflowX":"hidden" }}>
                 <div className='w-3/4'>
                     <div className='md:mx-auto my-10 max-w-md md:max-w-4xl '>
                         <div className="Search justify-center text-center" style={{ "fontFamily": "Inter Extra" }}>
