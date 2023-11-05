@@ -7,9 +7,6 @@ const LandingPage = () => {
     return (
         <>
             <div className=''>
-
-
-
                 <div className="landingpage h-screen w-screen flex flex-col -z-10 md:flex-row bg-white" >
                     <div className='white-box bg-white text-slate-950 w-1/2 m-auto md:text-9xl'>
                         <div className='md:text-center md:p-2 p-12 ' style={{ "fontFamily": "'Gruppo', sans-serif", "fontSize": "20px", "fontWeight": "700", "width": "100%" }}>

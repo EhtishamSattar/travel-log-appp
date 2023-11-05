@@ -2,13 +2,14 @@ import React from 'react'
 import NavbarMain from './NavbarMain'
 import Post from './Post'
 import Sidebar from './Sidebar'
+import { Link } from 'react-router-dom'
 
 const Plot = () => {
     return (
         <>
 
             <NavbarMain />
-            <div className='flex flex-row w-screen pt-10' style={{ "fontFamily": "Inter Extra","overflowX":"hidden" }}>
+            <div id="postsContainer" className='flex flex-row w-screen pt-10' style={{ "fontFamily": "Inter Extra" }}>
                 <div className='w-3/4'>
                     <div className='md:mx-auto my-10 max-w-md md:max-w-4xl '>
                         <div className="Search justify-center text-center" style={{ "fontFamily": "Inter Extra" }}>
@@ -47,10 +48,23 @@ const Plot = () => {
 
                         </div>
 
-                        
-                        <div className='text-3xl font-extrabold'>
+                        <div className='flex flex-row justify-between'>
+                            <div className='text-3xl font-extrabold'>
+                                Welcome Ehtisham
+                            </div>
+                            <div className="flex flex-row cursor-pointer">
+                                <div className='pb-3 pr-2'>
+                                    <Link to='/createpost' >Create Post</Link>
+                                </div>
+                                <div>
+                                    <Link to='/createpost'>
+                                    <button className='rounded-md '><svg className="w-6 h-6 text-gray-800 dark:gray-800 hover:text-blue-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.546.5a9.5 9.5 0 1 0 9.5 9.5 9.51 9.51 0 0 0-9.5-9.5ZM13.788 11h-3.242v3.242a1 1 0 1 1-2 0V11H5.304a1 1 0 0 1 0-2h3.242V5.758a1 1 0 0 1 2 0V9h3.242a1 1 0 1 1 0 2Z" />
+                                    </svg></button>
+                                    </Link> 
 
-                            Welcome Ehtisham
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <Post />

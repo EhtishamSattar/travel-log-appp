@@ -8,6 +8,7 @@ import LoadingPage from './Components/LoadingPage';
 import Video from './Components/Video';
 import ContactUs from './Components/ContactUs';
 import Plot from './Components/Plot';
+import CreatePost from './Components/CreatePost';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -31,6 +32,7 @@ function App() {
         <Route path="/travelooVideo" element={<Video />} />
         <Route path="/contactUs" element={<ContactUs/>} />
         <Route path="/content" element={<Plot/>} />
+        <Route path="/createpost" element={<CreatePost/>} />
       </Routes>
       }
 

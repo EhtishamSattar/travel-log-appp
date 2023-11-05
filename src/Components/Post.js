@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import Modal from 'react-modal';
 
+
 const Post = () => {
     let subtitle;
     const customStyles = {
@@ -17,6 +18,7 @@ const Post = () => {
         overlay: {
             backgroundColor: 'rgba(0, 0, 0, 0.5)', // Adjust the color and opacity as needed
         },
+        fontFamily: 'Inter Extra',
     };
 
     const customStyles2 = {
@@ -32,6 +34,8 @@ const Post = () => {
         overlay: {
             backgroundColor: 'rgba(0, 0, 0, 0.5)', // Adjust the color and opacity as needed
         },
+        fontFamily: 'Inter Extra',
+        
     };
 
     const [modalIsOpen, setIsOpen] = useState(false);
@@ -121,7 +125,7 @@ const Post = () => {
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam necessitatibus incidunt ut officiis explicabo inventore.
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam necessitatibus incidunt ut officiis explicabo inventore.
                         </p>
-                        <div className="mt-4 flex items-center">
+                        <div className="mt-10 mb-6 flex justify-end">
                             <button className="flex text-gray-700 text-sm mr-8 dark:text-gray-800 hover:text-blue-400">
                                 <svg className="w-4 h-4 mr-1 text-gray-800 dark:text-gray-800 hover:text-blue-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 18">
                                     <path d="M17.947 2.053a5.209 5.209 0 0 0-3.793-1.53A6.414 6.414 0 0 0 10 2.311 6.482 6.482 0 0 0 5.824.5a5.2 5.2 0 0 0-3.8 1.521c-1.915 1.916-2.315 5.392.625 8.333l7 7a.5.5 0 0 0 .708 0l7-7a6.6 6.6 0 0 0 2.123-4.508 5.179 5.179 0 0 0-1.533-3.793Z" />
@@ -156,7 +160,7 @@ const Post = () => {
                                 onRequestClose={closeModal}
                                 style={customStyles}
                                 onAfterOpen={afterOpenModal}
-                                contentLabel="Update Modal">
+                                contentLabel="Update Modal" >
                                 <div className='flex flex-row justify-between'>
                                     <h2 className="text-blue-500 " ref={(_subtitle) => (subtitle = _subtitle)}>Edit</h2>
                                     <button onClick={closeModal} className=''>
@@ -213,7 +217,16 @@ const Post = () => {
                                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
                                         </svg>
                                     </button>
+                                    
 
+                                </div>
+                                <div className='block text-center pt-14'>
+                                        <button className='bg-black w-1/12 py-2 rounded-md text-white font-bold cursor-pointer hover:bg-[#181196] '>
+                                            Yes
+                                        </button>
+                                        <button onClick={closeModal2} className='ml-3 bg-black w-1/12 py-2 rounded-md text-white font-bold cursor-pointer hover:bg-[#181196] '>
+                                            No
+                                        </button>
                                 </div>
 
                             </Modal>
