@@ -27,7 +27,12 @@ const LoginPage = () => {
           // console.log(json.success,json.authToken);
           if(json.success)
           {
+            console.log(json.username,json.email);
+            localStorage.setItem('id',json._id);
+            localStorage.setItem('username',json.username);
+            localStorage.setItem('email',json.email);
             localStorage.setItem('token',json.authToken);
+
             //to redirect we are using useNavigate or useHistory hook from react router dom
             navigate("/content");
             alert("You logged in successfully");

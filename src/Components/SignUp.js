@@ -25,6 +25,9 @@ const SignUp = () => {
           // console.log(json.success,json.authToken);
           if(json.success)
           {
+            localStorage.setItem('id',json._id);
+            localStorage.setItem('username',json.username);
+            localStorage.setItem('email',json.email);
             localStorage.setItem('token',json.authToken);
             //to redirect we are using useNavigate or useHistory hook from react router dom
             navigate("/content");

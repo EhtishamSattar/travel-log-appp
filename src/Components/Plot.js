@@ -50,7 +50,7 @@ const Plot = () => {
 
                         <div className='flex flex-row justify-between'>
                             <div className='text-3xl font-extrabold'>
-                                Welcome Ehtisham
+                                Welcome {localStorage.getItem('username')}
                             </div>
                             <div className="flex flex-row cursor-pointer">
                                 <div className='pb-3 pr-2'>
