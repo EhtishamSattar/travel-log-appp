@@ -3,8 +3,29 @@ import NavbarMain from './NavbarMain'
 import Post from './Post'
 import Sidebar from './Sidebar'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
 
 const Plot = () => {
+    const [posts, setposts] = useState([]);
+
+    const getData=async ()=>{
+        const response=await fetch("http://localhost:5000/api/post/getPosts",{
+        method:"GET",
+        headers:{
+            "Content-Type":"Application/json",
+            "auth-token":localStorage.getItem('token')
+        }
+    });
+
+    const json = await response.json();
+    let data = JSON.stringify(json);
+    data = JSON.parse(data);
+    console.log(data);
+    setposts(data);
+    }
+    
+    getData();
+
     return (
         <>
 
@@ -67,7 +88,14 @@ const Plot = () => {
                             </div>
                         </div>
                     </div>
-                    <Post />
+                    {posts.map((post)=>{
+                        return(
+                            <Post title={post.title} description={post.description} image={post.image} username={post.username} />
+                        )
+                        
+                    })
+                    }
+                    
                     {/* <Post />
                     <Post />
                     <Post />

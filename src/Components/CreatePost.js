@@ -1,8 +1,11 @@
 import React from 'react'
 import NavbarMain from './NavbarMain'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+
 
 const CreatePost = () => {
+    const navigate = useNavigate();
     const [credentials, setcredentials] = useState({ title: "", description: "" });
 
     const onChange = (e) => {
@@ -18,9 +21,10 @@ const CreatePost = () => {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
+                "auth-token": localStorage.getItem('token')
             },
 
-            body: JSON.stringify({ title, description, author: localStorage.getItem('id') }),
+            body: JSON.stringify({ title, description, post_author: localStorage.getItem('id') }),
         });
         const json = await response.json();
         //console.log(credentials.password," ",credentials.cpassword);
@@ -28,13 +32,15 @@ const CreatePost = () => {
         if (json.success) {
             //localStorage.setItem('token',json.authToken);
             //to redirect we are using useNavigate or useHistory hook from react router dom
-            //navigate("/content");
             alert("Post created successfully");
+            navigate("/content");
 
+            
+            
         } else {
             console.log(json);
             alert(json.error);
-
+            
         }
     }
 

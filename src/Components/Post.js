@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Modal from 'react-modal';
 
 
-const Post = () => {
+const Post = (props) => {
     let subtitle;
     const customStyles = {
         content: {
@@ -86,44 +86,7 @@ const Post = () => {
                         </div>
                         <p className="text-gray-700">Joined 12 SEP 2012. </p>
                         <p className="mt-3 text-gray-700 text-sm font-semibold">
-                            Lorem ipsum, dolor sit amet conse. Saepe optio minus rem dolor sit amet!
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam necessitatibus incidunt ut officiis explicabo inventore.
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam necessitatibus incidunt ut officiis explicabo inventore.
-                            Lorem ipsum, dolor sit amet conse. Saepe optio minus rem dolor sit amet!
-                            <br></br>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam necessitatibus incidunt ut officiis explicabo inventore.
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam necessitatibus incidunt ut officiis explicabo inventore.
-                            Lorem ipsum, dolor sit amet conse. Saepe optio minus rem dolor sit amet!
-                            <br></br>
-                            <br></br>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam necessitatibus incidunt ut officiis explicabo inventore.
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam necessitatibus incidunt ut officiis explicabo inventore.
-                            Lorem ipsum, dolor sit amet conse. Saepe optio minus rem dolor sit amet!
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam necessitatibus incidunt ut officiis explicabo inventore.
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam necessitatibus incidunt ut officiis explicabo inventore.
-
-                            <br></br>
-                            <br></br>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam necessitatibus incidunt ut officiis explicabo inventore.
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam necessitatibus incidunt ut officiis explicabo inventore.
-                            Lorem ipsum, dolor sit amet conse. Saepe optio minus rem dolor sit amet!
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam necessitatibus incidunt ut officiis explicabo inventore.
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam necessitatibus incidunt ut officiis explicabo inventore.
-
-                            <br></br>
-                            <br></br>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam necessitatibus incidunt ut officiis explicabo inventore.
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam necessitatibus incidunt ut officiis explicabo inventore.
-                            Lorem ipsum, dolor sit amet conse. Saepe optio minus rem dolor sit amet!
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam necessitatibus incidunt ut officiis explicabo inventore.
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam necessitatibus incidunt ut officiis explicabo inventore.
-                            <br></br>
-                            <br></br>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam necessitatibus incidunt ut officiis explicabo inventore.
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam necessitatibus incidunt ut officiis explicabo inventore.
-                            Lorem ipsum, dolor sit amet conse. Saepe optio minus rem dolor sit amet!
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam necessitatibus incidunt ut officiis explicabo inventore.
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam necessitatibus incidunt ut officiis explicabo inventore.
+                            {props.description}
                         </p>
                         <div className="mt-10 mb-6 flex justify-end">
                             <button className="flex text-gray-700 text-sm mr-8 dark:text-gray-800 hover:text-blue-400">

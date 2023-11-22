@@ -21,11 +21,12 @@ const SignUp = () => {
             body: JSON.stringify({username,email,password}),
           });
           const json = await response.json();
+          console.log(json);
           //console.log(credentials.password," ",credentials.cpassword);
           // console.log(json.success,json.authToken);
           if(json.success)
           {
-            localStorage.setItem('id',json._id);
+            localStorage.setItem('id',json.id);
             localStorage.setItem('username',json.username);
             localStorage.setItem('email',json.email);
             localStorage.setItem('token',json.authToken);
